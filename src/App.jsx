@@ -1,12 +1,14 @@
 import React from "react";
 import Dashboard from "./Components/Dashboard";
-import NewDashboard from "./NewDashboard";
+import { RevenueProvider } from "./Components/RevenueContext";
 
 const App = () => {
   return (
     <div>
-      <Dashboard />
-      {/* <NewDashboard /> */}
+      <RevenueProvider>
+        <Dashboard />
+        {/* <NewDashboard /> */}
+      </RevenueProvider>
     </div>
   );
 };

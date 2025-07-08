@@ -1,59 +1,16 @@
 import React from "react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-} from "recharts";
-import Header from "./Header";
-import MobileMenu from "./MobileMenu";
-import Hero from "./Hero";
-import ContentVerticals from "./ContentVerticals";
-import About from "./About";
-import Services from "./Services";
-import Partner from "./Partner";
-import SubmitContent from "./SubmitContent";
-import Catalog from "./Catalog";
-import AnalyticsDashboard from "./AnalyticsDashboard";
-import Contact from "./Contact";
-import Footer from "./Footer";
+import AVODRevenueCalculator from "./AVODRevenueCalculator";
+import TVODRevenueCalculator from "./TVODRevenueCalculator";
+import ContentPerformanceDashboard from "./ContentPerformanceDashboard";
+
 const Dashboard = () => {
   return (
-    <div>
-      <>
-        {/* Header */}
-        <Header />
-        {/* Mobile Menu (Hidden by default) */}
-        <MobileMenu />
-        {/* Hero Section */}
-        <Hero />
-        {/* Content Verticals */}
-        <ContentVerticals />
-        {/* About Section */}
-        <About />
-        {/* Services Section */}
-        <Services />
-        {/* Partner Showcase */}
-        <Partner />
-        {/* Submit Content Section */}
-        <SubmitContent />
-        {/* Catalog Section */}
-        <Catalog />
-        {/* Analytics Dashboard */}
-        <AnalyticsDashboard />
-        {/* Contact Section */}
-        <Contact />
-        {/* Footer */}
-        <Footer />
-        {/* Scripts */}
-      </>
+    <div className="p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <AVODRevenueCalculator />
+        <TVODRevenueCalculator />
+        <ContentPerformanceDashboard />
+      </div>
     </div>
   );
 };
