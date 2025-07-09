@@ -4,6 +4,7 @@ import TVODRevenueCalculator from "./TVODRevenueCalculator";
 import ContentPerformanceDashboard from "./ContentPerformanceDashboard";
 import ContentTypeRevenueChart from "./ContentTypeRevenueChart";
 import GeoDistributionChart from "./GeoDistributionChart";
+import CPMRevenueDashboard from "./CPMRevenue/CPMRevenueDashboard";
 
 const Dashboard = () => {
   return (
@@ -14,6 +15,7 @@ const Dashboard = () => {
         <ContentPerformanceDashboard />
         <ContentTypeRevenueChart />
         <GeoDistributionChart />
+        <CPMRevenueDashboard />
       </div>
     </div>
   );
