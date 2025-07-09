@@ -2,6 +2,8 @@ import React from "react";
 import AVODRevenueCalculator from "./AVODRevenueCalculator";
 import TVODRevenueCalculator from "./TVODRevenueCalculator";
 import ContentPerformanceDashboard from "./ContentPerformanceDashboard";
+import ContentTypeRevenueChart from "./ContentTypeRevenueChart";
+import GeoDistributionChart from "./GeoDistributionChart";
 
 const Dashboard = () => {
   return (
@@ -10,6 +12,8 @@ const Dashboard = () => {
         <AVODRevenueCalculator />
         <TVODRevenueCalculator />
         <ContentPerformanceDashboard />
+        <ContentTypeRevenueChart />
+        <GeoDistributionChart />
       </div>
     </div>
   );
