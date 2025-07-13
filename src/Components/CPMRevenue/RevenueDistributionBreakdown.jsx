@@ -15,12 +15,12 @@ const RevenueDistributionBreakdown = ({ netRevenue }) => {
   const scjShare = (net * scjPercentage) / 100;
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-xl mt-6">
-      <h3 className="text-xl font-semibold text-gray-900 mb-4">
+    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-lg w-full max-w-xl mt-6 text-white">
+      <h3 className="text-xl font-semibold mb-4 text-white">
         Revenue Distribution Summary
       </h3>
 
-      <div className="space-y-2 text-sm text-gray-700">
+      <div className="space-y-3 text-sm text-gray-300">
         <ResultRow label="Net Revenue" value={`$${net.toFixed(2)}`} />
         <ResultRow
           label="Platform Share (50%)"
@@ -38,20 +38,28 @@ const RevenueDistributionBreakdown = ({ netRevenue }) => {
           label="TDS Deduction (5% on your share)"
           value={`-$${tds.toFixed(2)}`}
         />
-        <hr className="my-2" />
+        <hr className="border-gray-700" />
         <ResultRow
           label="Your Final Share"
           value={`$${yourFinalShare.toFixed(2)}`}
+          bold
+          highlight
         />
       </div>
     </div>
   );
 };
 
-const ResultRow = ({ label, value }) => (
-  <div className="flex justify-between">
-    <span>{label}</span>
-    <span className="font-semibold">{value}</span>
+const ResultRow = ({ label, value, bold = false, highlight = false }) => (
+  <div className="flex justify-between items-center">
+    <span className="text-sm">{label}</span>
+    <span
+      className={`${highlight ? "text-green-400" : "text-white"} ${
+        bold ? "font-semibold text-base" : "text-sm font-medium"
+      }`}
+    >
+      {value}
+    </span>
   </div>
 );
 

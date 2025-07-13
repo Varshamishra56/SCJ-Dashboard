@@ -31,12 +31,12 @@ const GeoDistributionChart = () => {
       {
         label: "AVOD Revenue",
         data: avodData,
-        backgroundColor: "#57b5e7",
+        backgroundColor: "#facc15", // yellow-400
       },
       {
         label: "TVOD Revenue",
         data: tvodData,
-        backgroundColor: "#8dd3c7",
+        backgroundColor: "#fb923c", // orange-400
       },
     ],
   };
@@ -46,21 +46,44 @@ const GeoDistributionChart = () => {
     plugins: {
       legend: {
         position: "bottom",
+        labels: {
+          color: "#d1d5db", // text-gray-300
+        },
+      },
+      tooltip: {
+        backgroundColor: "#1F2937",
+        titleColor: "#fff",
+        bodyColor: "#fff",
+        borderColor: "rgba(255,255,255,0.1)",
+        borderWidth: 1,
+        padding: 10,
       },
     },
     scales: {
       y: {
         beginAtZero: true,
         ticks: {
+          color: "#d1d5db",
           callback: (value) => `$${value}`,
+        },
+        grid: {
+          color: "rgba(255,255,255,0.05)",
+        },
+      },
+      x: {
+        ticks: {
+          color: "#d1d5db",
+        },
+        grid: {
+          color: "rgba(255,255,255,0.05)",
         },
       },
     },
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-2xl">
-      <h3 className="text-xl font-semibold text-gray-900 mb-4">
+    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 w-full max-w-2xl hover:bg-white/10 transition-all duration-300 text-white">
+      <h3 className="text-xl font-semibold text-white mb-4">
         Geographic Distribution
       </h3>
       <div className="h-[300px]">
